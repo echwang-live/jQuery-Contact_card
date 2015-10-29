@@ -1,0 +1,53 @@
+/*CSS reset settings here*/
+*{
+ margin: 0px;
+ padding: 0px;
+}
+#container{
+	width: 90%;
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: silver;
+}
+#inputPanel{
+	width: 40%;
+	background-color: gray;
+	display: inline-block;
+}
+	#inputPanel label, input{
+		margin: 5px 10px;
+		vertical-align: top;
+	}
+	#inputPanel textarea{
+		width: 20em;
+		height: 10em;
+		margin: 5px 0px;
+	}
+	#submitBtn{
+		font-size: 1em;
+		padding: 10px;
+		margin: 5px 103px;	
+	}
+
+#contentPanel{
+	width: 40%;
+	background-color: white;
+	display: inline-block;
+	vertical-align: top;
+}
+	#contentPanel h1, h4{
+		margin: 5px 0px;
+		text-align: center;
+	}
+	#contentPanel p{
+		text-align: center;
+		margin: 10px 0px;
+	}
+
+	.contactInfo{
+		border: black solid 1px;
+	}
+.hidden{
+	visibility: hidden;
+}

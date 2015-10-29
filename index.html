@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Contact Card</title>
+	<link rel="stylesheet" type="text/css" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
+	<link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script type="text/javascript">
+         $(document).ready(function(){          
+         	console.log('form is ready');
+	     	$("form").submit(function(){
+
+		         // Read the values of first_name, last_name, email_address and contact_number
+		         var first_name = $("#first_name").val();
+		         var last_name = $("#last_name").val();
+		         var description = $("#description").val();
+		         console.log("first_name = ", first_name, "last_name = ", last_name, "description = ", description);
+
+		         // Add the dynamic content
+		         $('#contentPanel').append(
+		         	"<div class='contactInfo'><h1 class='name'>" + first_name + " " + last_name +
+		         	"<br><small>Click for description</small></h1><p class='description hidden'>" + description + "</p></div>"
+		         );
+
+		         // Prevent form from submitting
+		         return false;
+	         });
+
+	     	// Click handler
+	     	$('#contentPanel').on('click', '.contactInfo', function(){
+	          	console.log("contactCard clicked");
+	          	$(this).find("p").toggleClass("hidden");
+       			$(this).find("h1").toggleClass("hidden");
+	         });
+         }); //End of ready()
+
+         // Handler
+	          
+
+      </script>	
+</head>
+<body>
+	<div id='container'>
+		<div id='inputPanel'>
+			<form action="fake.php" method="get" accept-charset="utf-8">
+				<label>First name:</label><input type="text" name="first_name" id="first_name" value="John"><br>
+				<label>Last name:</label><input type="text" name="last_name" id="last_name" value="Doe"><br>
+				<label>Description:</label>
+				<textarea name="dsecription" id ="description">Description</textarea><br>
+				<input type="submit" id="submitBtn" value="Add User">
+			</form>
+		</div>
+
+		<div id='contentPanel'>
+			<h1>Contact Information</h1><br>
+		</div>
+	</div>
+	
+
+</body>
+</html>
